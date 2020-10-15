@@ -1,15 +1,20 @@
 import React from "react";
 import { TouchableWithoutFeedback, StyleSheet } from "react-native";
-import Theme from "../theme";
+import theme from "../theme";
 
 import Text from "./Text";
 
 const AppBarTab = ({ children }) => {
-  const styles = StyleSheet.create({});
+  const styles = StyleSheet.create({
+    text: {
+      color: '#fff',
+      fontSize: theme.fontSizes.subheading
+    }
+  });
 
   return (
     <TouchableWithoutFeedback>
-      <Text style={{ color: "#fff" }} fontSize='subheading' fontWeight='bold'>{children}</Text>
+      <Text style={styles.text} fontSize='subheading' fontWeight='bold'>{children}</Text>
     </TouchableWithoutFeedback>
   );
 };
