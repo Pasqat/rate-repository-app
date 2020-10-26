@@ -9,7 +9,7 @@ const AppBarTab = ({ children }) => {
     text: {
       color: "#fff",
       fontSize: theme.fontSizes.subheading,
-      padding: 10
+      padding: 20
     },
   });
 

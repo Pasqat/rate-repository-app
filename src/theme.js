@@ -7,6 +7,7 @@ const theme = {
     mainBackground: "#e1e4e8"
   },
   fontSizes: {
+    title: 18,
     body: 14,
     subheading: 16,
   },
@@ -17,6 +18,9 @@ const theme = {
     normal: "400",
     bold: "700",
   },
+  border: {
+    defaultRadius: 4,
+  }
 };
 
 export default theme;

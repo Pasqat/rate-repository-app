@@ -8,7 +8,7 @@ import AppBarTab from "./AppBarTab";
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
+    paddingTop: 30,
     backgroundColor: theme.colors.appBarBackground,
   },
 });
@@ -18,7 +18,7 @@ const AppBar = () => {
     <View style={styles.container}>
       <ScrollView horizontal>
         <Link to="/">
-          <AppBarTab>Repository</AppBarTab>
+          <AppBarTab>Repositories</AppBarTab>
         </Link>
         <Link to="/signin">
           <AppBarTab>Sign in</AppBarTab>

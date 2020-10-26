@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
     paddingLeft: 14,
   },
   titleText: {
-    fontSize: 18,
+    fontSize: theme.fontSizes.title,
     marginBottom: 8,
   },
   language: {
     backgroundColor: theme.colors.primary,
-    borderRadius: 4,
+    borderRadius: theme.border.defaultRadius,
     paddingVertical: 4,
     paddingHorizontal: 8,
     marginRight: "auto",
