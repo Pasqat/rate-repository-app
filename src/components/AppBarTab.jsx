@@ -7,15 +7,16 @@ import Text from "./Text";
 const AppBarTab = ({ children }) => {
   const styles = StyleSheet.create({
     text: {
-      color: '#fff',
-      fontSize: theme.fontSizes.subheading
-    }
+      color: "#fff",
+      fontSize: theme.fontSizes.subheading,
+      padding: 10
+    },
   });
 
   return (
-    <TouchableWithoutFeedback>
-      <Text style={styles.text} fontSize='subheading' fontWeight='bold'>{children}</Text>
-    </TouchableWithoutFeedback>
+    <Text style={styles.text} fontSize="subheading" fontWeight="bold">
+      {children}
+    </Text>
   );
 };
 

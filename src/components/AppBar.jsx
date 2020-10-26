@@ -1,5 +1,7 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
+
+import { Link } from "react-router-native";
 
 import theme from "../theme";
 import AppBarTab from "./AppBarTab";
@@ -7,8 +9,6 @@ import AppBarTab from "./AppBarTab";
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
-    paddingHorizontal: 20,
-    paddingBottom: 12,
     backgroundColor: theme.colors.appBarBackground,
   },
 });
@@ -16,7 +16,14 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return (
     <View style={styles.container}>
-      <AppBarTab>Repository</AppBarTab>
+      <ScrollView horizontal>
+        <Link to="/">
+          <AppBarTab>Repository</AppBarTab>
+        </Link>
+        <Link to="/signin">
+          <AppBarTab>Sign in</AppBarTab>
+        </Link>
+      </ScrollView>
     </View>
   );
 };
