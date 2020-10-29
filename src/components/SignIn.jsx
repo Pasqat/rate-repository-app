@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
+import * as yup from 'yup';
 
 import theme from "../theme";
 
@@ -15,15 +16,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
   },
-  input: {
-    marginBottom: 5,
-    padding: 15,
-    borderRadius: theme.border.defaultRadius,
-    borderColor: "#e0e0e0",
-    borderWidth: 1,
-    fontSize: theme.fontSizes.subheading
-  },
-
   button: {
     backgroundColor: theme.colors.primary,
     padding: 15,
@@ -45,16 +37,25 @@ const initialValues = {
   password: "",
 };
 
+const validationSchema = yup.object().shape({
+  username: yup
+    .string()
+    .length(3, 'Username lenght must be at least 4 characters')
+    .required('username is required'),
+  password: yup
+    .string()
+    .length(3, 'Password lenght too short')
+    .required('password missing')
+});
+
 const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.view}>
       <FormixTextInput
-        style={styles.input}
         name="username"
         placeholder="Username"
       />
       <FormixTextInput
-        style={styles.input}
         name="password"
         placeholder="Password"
         secureTextEntry
@@ -72,7 +73,7 @@ const SignIn = () => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
       {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
     </Formik>
   );
