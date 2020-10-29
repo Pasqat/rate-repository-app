@@ -5,13 +5,14 @@ import { useField } from "formik";
 import TextInput from "./TextInput";
 import Text from "./Text";
 
-import theme from '../theme'
+import theme from "../theme";
 
 const styles = StyleSheet.create({
   errorText: {
     marginTop: 5,
     marginBottom: 2,
-    color: "#d73a4a",
+    color: theme.colors.error,
+    fontFamily: theme.fonts.main,
   },
   input: {
     marginBottom: 5,
@@ -20,10 +21,11 @@ const styles = StyleSheet.create({
     borderColor: "#e0e0e0",
     borderWidth: 1,
     fontSize: theme.fontSizes.subheading,
+    fontFamily: theme.fonts.main,
   },
   inputError: {
-    borderColor: "#d73a4a"
-  }
+    borderColor: theme.colors.error,
+  },
 });
 
 const FormixTextInput = ({ name, ...props }) => {

@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
   text: {
     color: "white",
     fontSize: theme.fontSizes.subheading,
-    fontWeight: theme.fontWeights.bold
+    fontWeight: theme.fontWeights.bold,
+    fontFamily: theme.fonts.main,
   },
 });
 
@@ -40,11 +41,11 @@ const initialValues = {
 const validationSchema = yup.object().shape({
   username: yup
     .string()
-    .length(3, 'Username lenght must be at least 4 characters')
+    .min(3, 'Username lenght must be at least 4 characters')
     .required('username is required'),
   password: yup
     .string()
-    .length(3, 'Password lenght too short')
+    .min(3, 'Password lenght too short')
     .required('password missing')
 });
 
