@@ -20,7 +20,6 @@ const RepositoryList = () => {
     if (loading) {
       return;
     }
-    console.log("ou");
     if (repositories) {
       const newRepositoryNodes = repositories
         ? repositories.edges.map((edge) => edge.node)

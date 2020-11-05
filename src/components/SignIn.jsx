@@ -9,6 +9,7 @@ import { View, StyleSheet, TouchableHighlight } from "react-native";
 import FormixTextInput from "./FormikTextInput";
 
 import useSignIn from "../hooks/useSignIn";
+import { useHistory } from "react-router-native";
 
 const styles = StyleSheet.create({
   view: {
@@ -65,19 +66,21 @@ const SignInForm = ({ onSubmit }) => {
 
 const SignIn = () => {
   const [signIn, result] = useSignIn();
+  const history = useHistory();
 
   const onSubmit = async (values) => {
     const { username, password } = values;
 
     try {
-      const { data } = await signIn({ username, password });
+      const data = await signIn({ username, password });
       console.log(data);
+      history.push("/");
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log(result.data);
+  console.log("result.data", result.data);
 
   return (
     <Formik
