@@ -80,8 +80,6 @@ const SignIn = () => {
     }
   };
 
-  console.log("result.data", result.data);
-
   return (
     <Formik
       initialValues={initialValues}

@@ -9,7 +9,7 @@ const useRepositories = () => {
   const [error, setError] = useState();
 
   const response = useQuery(GET_REPOSITORIES, {
-    fetchPolicy: "no-cache",
+    fetchPolicy: "cache-and-network",
   });
 
   useEffect(() => {
