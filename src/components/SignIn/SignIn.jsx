@@ -2,13 +2,13 @@ import React from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 
-import theme from "../theme";
+import theme from "../../theme";
 
-import Text from "./Text";
+import Text from "../Text";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
-import FormixTextInput from "./FormikTextInput";
+import FormixTextInput from "../FormikTextInput";
 
-import useSignIn from "../hooks/useSignIn";
+import useSignIn from "../../hooks/useSignIn";
 import { useHistory } from "react-router-native";
 
 const styles = StyleSheet.create({
@@ -55,12 +55,37 @@ const validationSchema = yup.object().shape({
 const SignInForm = ({ onSubmit }) => {
   return (
     <View style={styles.view}>
-      <FormixTextInput name="username" placeholder="Username" />
-      <FormixTextInput name="password" placeholder="Password" secureTextEntry />
-      <TouchableHighlight style={styles.button} onPress={onSubmit}>
+      <FormixTextInput
+        name="username"
+        placeholder="Username"
+        testID="usernameField"
+      />
+      <FormixTextInput
+        name="password"
+        placeholder="Password"
+        secureTextEntry
+        testID="passwordField"
+      />
+      <TouchableHighlight
+        style={styles.button}
+        onPress={onSubmit}
+        testID="submitButton"
+      >
         <Text style={styles.text}>Sign In</Text>
       </TouchableHighlight>
     </View>
+  );
+};
+
+export const SignInContainer = ({ onSubmit }) => {
+  return (
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
+      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
+    </Formik>
   );
 };
 
@@ -80,15 +105,7 @@ const SignIn = () => {
     }
   };
 
-  return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-      validationSchema={validationSchema}
-    >
-      {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
-    </Formik>
-  );
+  return <SignInContainer onSubmit={onSubmit} />;
 };
 
 export default SignIn;
