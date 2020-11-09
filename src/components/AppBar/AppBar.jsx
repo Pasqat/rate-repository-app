@@ -3,13 +3,13 @@ import { View, StyleSheet, ScrollView, TouchableHighlight } from "react-native";
 import { useApolloClient } from "@apollo/react-hooks";
 import { Link } from "react-router-native";
 
-import theme from "../theme";
+import theme from "../../theme";
 import AppBarTab from "./AppBarTab";
 
 import { useQuery } from "@apollo/react-hooks";
-import { AUTHORIZED_USER } from "../graphql/queries";
+import { AUTHORIZED_USER } from "../../graphql/queries";
 
-import AuthStorageContext from "../contexts/AuthStorageContext";
+import AuthStorageContext from "../../contexts/AuthStorageContext";
 
 const styles = StyleSheet.create({
   container: {

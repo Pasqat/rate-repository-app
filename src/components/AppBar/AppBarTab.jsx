@@ -1,15 +1,15 @@
 import React from "react";
-import { TouchableWithoutFeedback, StyleSheet } from "react-native";
-import theme from "../theme";
+import { StyleSheet } from "react-native";
+import theme from "../../theme";
 
-import Text from "./Text";
+import Text from "../Text";
 
 const AppBarTab = ({ children }) => {
   const styles = StyleSheet.create({
     text: {
       color: "#fff",
       fontSize: theme.fontSizes.subheading,
-      padding: 20
+      padding: 20,
     },
   });
 

@@ -1,11 +1,11 @@
 import React from "react";
 
 import { View, StyleSheet } from "react-native";
-import Text from "./Text";
-import Avatar from "./Avatar";
+import Text from "../Text";
+import Avatar from "../Avatar";
 import Stats from "./Stats";
 
-import theme from "../theme";
+import theme from "../../theme";
 
 const styles = StyleSheet.create({
   container: {
@@ -54,18 +54,23 @@ const RepositoryItem = ({ item }) => {
             fontWeight="bold"
             fontSize="subheading"
             style={styles.titleText}
+            testID="repositoryName"
           >
             {fullName}
           </Text>
           <Text color="textSecondary">{description}</Text>
           <View style={styles.language}>
-            <Text style={styles.languageText} fontWeight="bold">
+            <Text
+              testID="repositoryLanguage"
+              style={styles.languageText}
+              fontWeight="bold"
+            >
               {language}
             </Text>
           </View>
         </View>
       </View>
-      <Stats item={item} style={{paddingVertical: 8}}/>
+      <Stats item={item} style={{ paddingVertical: 8 }} />
     </View>
   );
 };
