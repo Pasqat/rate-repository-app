@@ -10,15 +10,15 @@ const theme = {
     error: "#d73a4a",
   },
   fontSizes: {
-    title: 18,
-    body: 14,
-    subheading: 16,
+    title: 20,
+    body: 16,
+    subheading: 18,
   },
   fonts: {
     main: Platform.select({
-      android: 'Roboto',
-      ios: 'Arial',
-      default: 'System'
+      android: "Roboto",
+      ios: "Arial",
+      default: "System",
     }),
   },
   fontWeights: {
@@ -27,7 +27,7 @@ const theme = {
   },
   border: {
     defaultRadius: 4,
-  }
+  },
 };
 
 export default theme;

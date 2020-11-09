@@ -30,7 +30,6 @@ const AppBar = () => {
     apolloClient.resetStore();
   }
 
-  console.log("data in AppBar", data);
   return (
     <View style={styles.container}>
       <ScrollView horizontal>

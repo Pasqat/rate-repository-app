@@ -7,6 +7,7 @@ import theme from "../theme";
 import RepositoryList from "../components/RepositoryList/RepositoryList";
 import AppBar from "./AppBar/AppBar";
 import SiginIn from "./SignIn/SignIn";
+import RepositoryView from "./RepositoryView/RepositoryView";
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +24,9 @@ const Main = () => {
       <Switch>
         <Route path="/" exact>
           <RepositoryList />
+        </Route>
+        <Route path="/repository/:repositoryId">
+          <RepositoryView />
         </Route>
         <Route path="/signin">
           <SiginIn />
