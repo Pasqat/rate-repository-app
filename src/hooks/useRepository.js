@@ -42,13 +42,11 @@ const useRepositories = () => {
 // this one is the same hook as above but following the
 // course solution
 export const useRepository = (repositoryId) => {
-  console.log(repositoryId, typeof repositoryId);
   const { data, ...result } = useQuery(GET_REPOSITORY, {
     fetchPolicy: "cache-and-network",
     variables: { id: repositoryId },
   });
 
-  console.log("useRepo data", data);
   return { repository: data ? data.repository : undefined, ...result };
 };
 

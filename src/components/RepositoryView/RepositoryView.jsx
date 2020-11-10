@@ -1,5 +1,7 @@
 import React from "react";
 
+import { format } from "date-fns";
+
 import { FlatList, View, StyleSheet } from "react-native";
 import Text from "../Text";
 
@@ -52,7 +54,6 @@ const RepositoryInfo = ({ repository }) => {
 };
 
 const ReviewItem = ({ review }) => {
-  console.log("reviewItem ➡️", review);
   const { createdAt, rating, text, user } = review;
   return (
     <View style={styles.container}>
@@ -66,7 +67,9 @@ const ReviewItem = ({ review }) => {
           <Text fontWeight="bold" fontSize="subheading">
             {user.username}
           </Text>
-          <Text color="textSecondary">{createdAt}</Text>
+          <Text color="textSecondary">
+            {format(new Date(createdAt), "dd.MM.yyyy")}
+          </Text>
           <Text>{text}</Text>
         </View>
       </View>
@@ -86,7 +89,6 @@ const RepositoryView = () => {
     ? repository.reviews.edges.map((edge) => edge.node)
     : [];
 
-  console.log(repository);
   return (
     <FlatList
       data={reviews}

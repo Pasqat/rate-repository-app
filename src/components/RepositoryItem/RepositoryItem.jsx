@@ -64,6 +64,8 @@ const RepositoryItem = ({ item, viewUrlButton }) => {
     ownerAvatarUrl,
   } = item;
 
+  // TODO use of ThouchableOpacity end useHistory for better
+  // user experience when click on repo title
   return (
     <View style={styles.container}>
       <View style={styles.header}>
