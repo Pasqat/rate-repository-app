@@ -4,12 +4,7 @@ import { useHistory } from "react-router-native";
 import { Link } from "react-router-native";
 import * as Linking from "expo-linking";
 
-import {
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  TouchableHighlight,
-} from "react-native";
+import { View, StyleSheet, TouchableHighlight } from "react-native";
 import Text from "../Text";
 import Avatar from "../Avatar";
 import Stats from "./Stats";
@@ -69,19 +64,11 @@ const RepositoryItem = ({ item, viewUrlButton }) => {
     ownerAvatarUrl,
   } = item;
 
-  // const history = useHistory();
-
-  function onPressHandler(repositoryId) {
-    console.log("Pressed!", repositoryId);
-    // history.push("/test");
-  }
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <Avatar size="small" source={{ uri: ownerAvatarUrl }} />
         <View style={styles.title}>
-          {/* <TouchableOpacity onPress={() => onPressHandler(id)}> */}
           <Link to={`/repository/${id}`}>
             <Text
               fontWeight="bold"
@@ -92,7 +79,6 @@ const RepositoryItem = ({ item, viewUrlButton }) => {
               {fullName}
             </Text>
           </Link>
-          {/* </TouchableOpacity> */}
           <Text color="textSecondary">{description}</Text>
           <View style={styles.language}>
             <Text
